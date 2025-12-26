@@ -1,0 +1,41 @@
+
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+@import 'base';       
+@import 'typography'; 
+@import 'layout';    
+@import 'buttons';    
+@import 'header';
+@import 'mobile-menu';
+@import 'hero';
+@import 'marquee';
+@import 'features';
+@import 'articles';
+@import 'footer';
+
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+  background-color: #0b0510; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 206, 206, 0.3);
+  border-radius: 5px;
+  border: 2px solid #0b0510; 
+
+  &:hover {
+    background: #2dcece; 
+    box-shadow: 0 0 10px rgba(45, 206, 206, 0.8);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #0b0510;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #2dcece #0b0510;
+}

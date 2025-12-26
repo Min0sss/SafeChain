@@ -1,0 +1,195 @@
+.features-unique {
+  padding: 5rem 0;
+  position: relative;
+  background-color: transparent;
+
+  &__intro {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba($royal-gold, 0.3);
+      border-radius: 50px;
+      background: rgba($royal-gold, 0.05);
+      color: $royal-gold;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: $white;
+      font-size: 2.8rem;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: $grayishBlue;
+    }
+  }
+}
+
+.nodes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 50%;
+    z-index: 0;
+    display: none;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, $royal-gold, transparent);
+    opacity: 0.6;
+
+    @include breakpoint-up(large) {
+      display: block;
+    }
+  }
+}
+
+.node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  text-align: center;
+
+  @include breakpoint-up(large) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+      height: 2px;
+      background: rgba($royal-gold, 0.5);
+      box-shadow: 0 0 10px rgba($royal-gold, 0.3);
+    }
+
+    &:not(.node-item--reverse)::after {
+      right: 50%;
+      left: 150px;
+    }
+
+    &.node-item--reverse {
+      flex-direction: row-reverse;
+      text-align: right;
+
+      &::after {
+        right: 150px;
+        left: 50%;
+      }
+    }
+  }
+
+  &__orb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba($royal-gold, 0.3);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba($royal-gold, 0.1) 0%, rgba(255, 255, 255, 0.02) 70%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+
+    img {
+      z-index: 2;
+      width: 70px;
+      height: auto;
+      filter: drop-shadow(0 0 10px rgba($royal-gold, 0.8));
+    }
+
+    .orb-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba($royal-gold, 0.3) 0%, transparent 60%);
+      opacity: 0.6;
+      animation: pulseOrb 4s infinite;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      border-color: $royal-gold;
+      box-shadow: 0 0 50px rgba($royal-gold, 0.5);
+
+      img {
+        transform: rotateY(360deg);
+        transition: transform 0.8s ease;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    max-width: 420px;
+
+    .node-number {
+      display: block;
+      margin-bottom: -0.5rem;
+      background: linear-gradient(to bottom, rgba($royal-gold, 0.5), transparent);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1;
+      opacity: 0.8;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgba($royal-gold, 0.3);
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+      color: $white;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: $grayishBlue;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+@keyframes pulseOrb {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
