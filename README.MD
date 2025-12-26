@@ -75,7 +75,7 @@ SAFE-CHAIN/
 
 ```
 # Clone repository
-git clone https://github.com/Min0sss/Safe-Chain.git
+git clone https://github.com/Min0sss/SafeChain.git
 
 # Navigate to project directory
 cd Safe-Chain
