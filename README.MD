@@ -6,7 +6,7 @@ This project is a key component of my front-end professional portfolio, showcasi
 ---
 ## Live Demo
 
-https:
+https://safe-chain-ten.vercel.app/
 
 ## Features
 
